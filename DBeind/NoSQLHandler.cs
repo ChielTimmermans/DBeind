@@ -134,14 +134,11 @@ namespace DBeind
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-
-            for (int idx = 0; idx < count; idx++)
-            {
-                FilterDefinition<MongoDB.User> filter = Builders<MongoDB.User>.Filter.Where(x => x.password == "xxxxxxx");
-                UpdateDefinition<MongoDB.User> update = Builders<MongoDB.User>.Update.Set(x => x.password, "xxxx");
-                UpdateResult result = collection.UpdateOneAsync(filter, update).Result;
-            }
-
+            
+            FilterDefinition<MongoDB.User> filter = Builders<MongoDB.User>.Filter.Empty;
+            UpdateDefinition<MongoDB.User> update = Builders<MongoDB.User>.Update.Set(a => a.password, "yyyyyyyy");
+            collection.UpdateManyAsync(filter, update);
+            
             stopWatch.Stop();
             return stopWatch.Elapsed;
         }
@@ -151,17 +148,8 @@ namespace DBeind
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
 
-            for (int idx = 0; idx < count; idx++)
-            {
-                collection.FindOneAndDelete(
-                    Builders<MongoDB.User>.Filter.Eq("password", "xxxx"),
-                    new FindOneAndDeleteOptions<MongoDB.User>
-                    {
-                        Sort = Builders<MongoDB.User>.Sort.Descending("_id")
-                    }
-                );
-            }
-
+            collection.DeleteMany(Builders<MongoDB.User>.Filter.Empty);
+            
             stopWatch.Stop();
             return stopWatch.Elapsed;
         }

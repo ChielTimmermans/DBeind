@@ -79,6 +79,7 @@ namespace DBeind
             updatingRows(1000);
             updatingRows(100000);
             updatingRows(1000000);
+
             Console.WriteLine("\n-----------------------------------------------------------------------");
         }
 
@@ -88,6 +89,8 @@ namespace DBeind
             List<TimeSpan> sourceList = new List<TimeSpan>();
             for (int idx = 0; idx < 10; idx++)
             {
+                NoSQLHandler.emptyDB();
+                NoSQLHandler.createQueries(count);
                 sourceList.Add(NoSQLHandler.updateQueries(count));
                 Console.SetCursorPosition(0, Console.CursorTop);
                 TimeSpan ts = getAverage(sourceList);
@@ -113,6 +116,8 @@ namespace DBeind
             List<TimeSpan> sourceList = new List<TimeSpan>();
             for (int idx = 0; idx < 10; idx++)
             {
+                NoSQLHandler.emptyDB();
+                NoSQLHandler.createQueries(count);
                 sourceList.Add(NoSQLHandler.deleteQueries(count));
                 Console.SetCursorPosition(0, Console.CursorTop);
                 TimeSpan ts = getAverage(sourceList);

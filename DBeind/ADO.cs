@@ -65,14 +65,14 @@ namespace DBeind
             dbhandler.createQueries(1, 1);
             dbhandler.createQueries(1000, 2);
             dbhandler.createQueries(100000, 3);
-            dbhandler.createQueries(1000000, 4);
+            //dbhandler.createQueries(1000000, 4);
             Console.WriteLine("INSERTING DONE");
 
             Console.WriteLine("SELECTING:");
             selectingRows(1, 1);
             selectingRows(1000, 2);
             selectingRows(100000, 3);
-            selectingRows(1000000, 4);
+            //selectingRows(1000000, 4);
             Console.WriteLine("\n-----------------------------------------------------------------------");
         }
 
@@ -96,10 +96,10 @@ namespace DBeind
         {
 
             Console.WriteLine("Updating:");
-            updatingRows(1, 1);
-            updatingRows(1000, 2);
-            updatingRows(100000, 3);
-            updatingRows(1000000, 4);
+            //updatingRows(1, 1);
+            //updatingRows(1000, 2);
+            //updatingRows(100000, 3);
+            //updatingRows(1000000, 4);
             Console.WriteLine("\n-----------------------------------------------------------------------");
         }
 

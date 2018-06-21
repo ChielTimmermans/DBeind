@@ -25,8 +25,8 @@ namespace DBeind
             Console.WriteLine("INSERTING:");
             insertingRows(1);
             insertingRows(1000);
-            //insertingRows(100000);
-            //insertingRows(1000000);
+            insertingRows(100000);
+            insertingRows(1000000);
             Console.WriteLine("\n-----------------------------------------------------------------------");
         }
 

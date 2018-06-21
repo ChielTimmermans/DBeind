@@ -73,30 +73,6 @@
           "lib/netstandard1.1/System.Buffers.dll": {}
         }
       },
-      "System.Data.SqlClient/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Data",
-          "System.Xml",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/System.Data.SqlClient.dll": {}
-        },
-        "runtime": {
-          "lib/net461/System.Data.SqlClient.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/net461/System.Data.SqlClient.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
       "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
         "type": "package",
         "compile": {
@@ -189,20 +165,6 @@
           "lib/netstandard1.1/System.Buffers.dll": {}
         }
       },
-      "System.Data.SqlClient/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Data",
-          "System.Xml",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/System.Data.SqlClient.dll": {}
-        },
-        "runtime": {
-          "runtimes/win/lib/net461/System.Data.SqlClient.dll": {}
-        }
-      },
       "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
         "type": "package",
         "compile": {
@@ -285,20 +247,6 @@
           "lib/netstandard1.1/System.Buffers.dll": {}
         }
       },
-      "System.Data.SqlClient/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Data",
-          "System.Xml",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/System.Data.SqlClient.dll": {}
-        },
-        "runtime": {
-          "lib/net461/System.Data.SqlClient.dll": {}
-        }
-      },
       "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
         "type": "package",
         "compile": {
@@ -379,20 +327,6 @@
         },
         "runtime": {
           "lib/netstandard1.1/System.Buffers.dll": {}
-        }
-      },
-      "System.Data.SqlClient/4.5.1": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Data",
-          "System.Xml",
-          "mscorlib"
-        ],
-        "compile": {
-          "ref/net461/System.Data.SqlClient.dll": {}
-        },
-        "runtime": {
-          "lib/net461/System.Data.SqlClient.dll": {}
         }
       },
       "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
@@ -490,7 +424,7 @@
       ]
     },
     "System.Buffers/4.3.0": {
-      "sha512": "ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
+      "sha512": "EnmBYCeNrIR+XG3tGCjegZStYGiyslatAEjO4eQ8Iri4iMW6loD3J8v+WohckThCFeU/AC1c3MI59NYS6qsaZw==",
       "type": "package",
       "path": "system.buffers/4.3.0",
       "files": [
@@ -502,81 +436,8 @@
         "system.buffers.nuspec"
       ]
     },
-    "System.Data.SqlClient/4.5.1": {
-      "sha512": "qXTvTFkBds7bnN+ntBMHGvmH3pCAkfT4TE1z2Xvfqo4wKMQC77O4aXsYCc7dzCESC+/Gom6l0GLuebpFx7MDvg==",
-      "type": "package",
-      "path": "system.data.sqlclient/4.5.1",
-      "files": [
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net451/System.Data.SqlClient.dll",
-        "lib/net46/System.Data.SqlClient.dll",
-        "lib/net461/System.Data.SqlClient.dll",
-        "lib/netcoreapp2.1/System.Data.SqlClient.dll",
-        "lib/netstandard1.2/System.Data.SqlClient.dll",
-        "lib/netstandard1.3/System.Data.SqlClient.dll",
-        "lib/netstandard2.0/System.Data.SqlClient.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net451/System.Data.SqlClient.dll",
-        "ref/net46/System.Data.SqlClient.dll",
-        "ref/net461/System.Data.SqlClient.dll",
-        "ref/net461/System.Data.SqlClient.xml",
-        "ref/netcoreapp2.1/System.Data.SqlClient.dll",
-        "ref/netcoreapp2.1/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/System.Data.SqlClient.dll",
-        "ref/netstandard1.2/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/de/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/es/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/fr/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/it/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/ja/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/ko/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/ru/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/zh-hans/System.Data.SqlClient.xml",
-        "ref/netstandard1.2/zh-hant/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/System.Data.SqlClient.dll",
-        "ref/netstandard1.3/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/de/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/es/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/fr/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/it/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/ja/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/ko/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/ru/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/zh-hans/System.Data.SqlClient.xml",
-        "ref/netstandard1.3/zh-hant/System.Data.SqlClient.xml",
-        "ref/netstandard2.0/System.Data.SqlClient.dll",
-        "ref/netstandard2.0/System.Data.SqlClient.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll",
-        "runtimes/unix/lib/netstandard1.3/System.Data.SqlClient.dll",
-        "runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.dll",
-        "runtimes/win/lib/net451/System.Data.SqlClient.dll",
-        "runtimes/win/lib/net46/System.Data.SqlClient.dll",
-        "runtimes/win/lib/net461/System.Data.SqlClient.dll",
-        "runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll",
-        "runtimes/win/lib/netstandard1.3/System.Data.SqlClient.dll",
-        "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.dll",
-        "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.dll",
-        "system.data.sqlclient.4.5.1.nupkg.sha512",
-        "system.data.sqlclient.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
     "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
-      "sha512": "5jh27Q9tB5bg7DxQeaWrGtg7XaL3tQWQJGvRvBG7gkcrvzqH2mAEZicq6fugbcvowsdLTHF7kw7P6AqsFWbwHQ==",
+      "sha512": "hWPhJxc453RCa8Z29O91EmfGeZIHX1ZH2A8L6lYQVSaKzku2DfArSfMEb1/MYYzPQRJZeu0c9dmYeJKxW5Fgng==",
       "type": "package",
       "path": "system.runtime.interopservices.runtimeinformation/4.0.0",
       "files": [
@@ -611,25 +472,24 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.1": [
       "EntityFramework >= 6.2.0",
-      "MongoDB.Driver >= 2.6.1",
-      "System.Data.SqlClient >= 4.5.1"
+      "MongoDB.Driver >= 2.6.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chiel\\.nuget\\packages\\": {}
+    "C:\\Users\\PChiel\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chiel\\Desktop\\DBeind\\DBeind\\DBeind.csproj",
+      "projectUniqueName": "C:\\Users\\PChiel\\source\\repos\\DBeind\\DBeind\\DBeind.csproj",
       "projectName": "DBeind",
-      "projectPath": "C:\\Users\\chiel\\Desktop\\DBeind\\DBeind\\DBeind.csproj",
-      "packagesPath": "C:\\Users\\chiel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chiel\\Desktop\\DBeind\\DBeind\\obj\\",
+      "projectPath": "C:\\Users\\PChiel\\source\\repos\\DBeind\\DBeind\\DBeind.csproj",
+      "packagesPath": "C:\\Users\\PChiel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PChiel\\source\\repos\\DBeind\\DBeind\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\chiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PChiel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -655,10 +515,6 @@
           "MongoDB.Driver": {
             "target": "Package",
             "version": "[2.6.1, )"
-          },
-          "System.Data.SqlClient": {
-            "target": "Package",
-            "version": "[4.5.1, )"
           }
         }
       }

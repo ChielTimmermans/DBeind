@@ -79,7 +79,9 @@
     <Compile Include="EF\Watchlist.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">
@@ -87,9 +89,6 @@
     </PackageReference>
     <PackageReference Include="MongoDB.Driver">
       <Version>2.6.1</Version>
-    </PackageReference>
-    <PackageReference Include="System.Data.SqlClient">
-      <Version>4.5.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
