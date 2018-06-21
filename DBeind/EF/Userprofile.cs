@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBeind
 {
-    class Userprofile
+    public partial class Userprofile
     {
     }
 }

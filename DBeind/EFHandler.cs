@@ -15,6 +15,7 @@ namespace DBeind
             Database.SetInitializer(
                 new DropCreateDatabaseAlways<EFHandler>()
             );
+            this.Configuration.AutoDetectChangesEnabled = false;
         }
         public DbSet<User> users { get; set; }
 
@@ -32,15 +33,26 @@ namespace DBeind
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
-
+            int max = 1000;
             using (var connection = new EFHandler())
             {
-                User user = new User() { email = "chiel1997@hotmail.com", created_at = DateTime.Now };
+
+                List<User> users = new List<User>();
                 for (int idx = 0; idx < count; idx++)
                 {
+                    User user = new User() { email = "chiel1997@hotmail.com", created_at = DateTime.Now };
+                    users.Add(user);
                     connection.users.Add(user);
-                       
-                    connection.SaveChanges();
+                    if (idx % max == 0 || idx == (count -1))
+                    {
+                        connection.SaveChanges();
+                        foreach (User user2 in users)
+                        {
+                            connection.Entry(user2).State = EntityState.Detached;
+                        }
+                        users.Clear();
+                    }
+
                     
                 }
             }

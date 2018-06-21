@@ -6,7 +6,7 @@ namespace DBeind.MongoDB
 {
     class User
     {
-        public ObjectId id { get; set; }
+        public ObjectId Id { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public int failedLoginAttempts { get; set; }

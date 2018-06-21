@@ -12,7 +12,6 @@ namespace DBeind
         {
             dbhandler = new DatabaseHandler("DESKTOP-OR069KP\\SQLEXPRESS", "DB", "root", "");
             startingComments();
-            //startBenchmark();
 
             dbhandler.deleteAll();
             inserting();
@@ -55,7 +54,7 @@ namespace DBeind
                 Console.SetCursorPosition(0, Console.CursorTop);
                 TimeSpan ts = getAverage(sourceList);
                 string avg = String.Format("{0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-                Console.Write("\tAverage time " + count + " ROW:\t {0} ms \t\t Rows inserted: {1} \t\t DONE: {2}/10", avg, countedRows, sourceList.Count());
+                Console.Write(String.Format("\tAverage time {0,15} ROW: {1} ms {2,10} Rows inserted: {3,10}  {4,10} DONE: {5}/10", count, avg, "", countedRows, "", sourceList.Count()));
             }
             Console.WriteLine("\n");
         }
@@ -80,7 +79,7 @@ namespace DBeind
         public void selectingRows(int count, int id)
         {
 
-            Console.Write("\tAverage time " + count + " ROW");
+            Console.Write(String.Format("\tAverage time {0,15} ROW:", count));
             List<TimeSpan> sourceList = new List<TimeSpan>();
             for (int idx = 0; idx < 10; idx++)
             {
@@ -88,7 +87,7 @@ namespace DBeind
                 Console.SetCursorPosition(0, Console.CursorTop);
                 TimeSpan ts = getAverage(sourceList);
                 string avg = String.Format("{0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-                Console.Write("\tAverage time " + count + " ROW:\t {0} ms\t\t DONE: {1}/10", avg, sourceList.Count());
+                Console.Write(String.Format("\tAverage time {0,15} ROW: {1} ms {2,10} DONE: {3}/10", count, avg, "", sourceList.Count()));
             }
             Console.WriteLine("\n");
         }
@@ -106,7 +105,7 @@ namespace DBeind
 
         public void updatingRows(int count, int id)
         {
-            Console.Write("\tAverage time " + count + " ROW");
+            Console.Write(String.Format("\tAverage time {0,15} ROW:", count));
             List<TimeSpan> sourceList = new List<TimeSpan>();
             for (int idx = 0; idx < 10; idx++)
             {
@@ -114,7 +113,7 @@ namespace DBeind
                 Console.SetCursorPosition(0, Console.CursorTop);
                 TimeSpan ts = getAverage(sourceList);
                 string avg = String.Format("{0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-                Console.Write("\tAverage time " + count + " ROW:\t {0} ms\t\t DONE: {1}/10", avg, sourceList.Count());
+                Console.Write(String.Format("\tAverage time {0,15} ROW: {1} ms {2,10} DONE: {3}/10", count, avg, "", sourceList.Count()));
             }
             Console.WriteLine("\n");
         }
@@ -131,7 +130,7 @@ namespace DBeind
 
         public void deletingRows(int count, int id)
         {
-            Console.Write("\tAverage time " + count + " ROW");
+            Console.Write(String.Format("\tAverage time {0,15} ROW:", count));
             List<TimeSpan> sourceList = new List<TimeSpan>();
             for (int idx = 0; idx < 10; idx++)
             {
@@ -143,7 +142,7 @@ namespace DBeind
                 Console.SetCursorPosition(0, Console.CursorTop);
                 TimeSpan ts = getAverage(sourceList);
                 string avg = String.Format("{0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-                Console.Write("\tAverage time " + count + " ROW:\t {0} ms\t\t DONE: {1}/10", avg, sourceList.Count());
+                Console.Write(String.Format("\tAverage time {0,15} ROW: {1} ms {2,10} DONE: {3}/10", count, avg, "", sourceList.Count()));
             }
             Console.WriteLine("\n");
         }

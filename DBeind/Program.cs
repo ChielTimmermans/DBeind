@@ -7,29 +7,35 @@ namespace DBeind
     {
         static void Main(string[] args)
         {
-            TextReader tIn = Console.In;
-            Console.WriteLine("This is the benchmarkin tool to test. ADO.net, Entity Framework and NoSQl's crud operations time");
-            Console.WriteLine("Testing every CRUD operations: 1, 1000, 10000, 1000000");
-            Console.WriteLine("Typ the number which one you want to test");
-            Console.WriteLine(".1 ADO.net");
-            Console.WriteLine(".2 Entity Framework");
-            Console.WriteLine(".3 NoSQl");
-            
-            String command = tIn.ReadLine();
 
-            if (command.Equals("1"))
+            TextReader tIn = Console.In;
+            String command = "";
+            while (command != "exit")
             {
-                startADO();
+                Console.WriteLine("This is the benchmarkin tool to test. ADO.net, Entity Framework and NoSQl's crud operations time");
+                Console.WriteLine("Testing every CRUD operations: 1, 1000, 10000, 1000000");
+                Console.WriteLine("Typ the number which one you want to test");
+                Console.WriteLine(".1 ADO.net");
+                Console.WriteLine(".2 Entity Framework");
+                Console.WriteLine(".3 NoSQl");
+
+                command = tIn.ReadLine();
+
+                if (command.Equals("1"))
+                {
+                    startADO();
+                }
+                else if (command.Equals("2"))
+                {
+                    startEF();
+                }
+                else if (command.Equals("3"))
+                {
+                    startNoSQL();
+                }
+                Console.WriteLine("Done benchmarking");
             }
-            else if (command.Equals("2"))
-            {
-                startEF();
-            }
-            else if (command.Equals("3"))
-            {
-                startNoSQL();
-            }
-            Console.WriteLine("Done benchmarking");
+
 
 
         }
