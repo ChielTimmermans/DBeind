@@ -10,33 +10,106 @@ namespace DBeind
     {
         NoSQLHandler NoSQLHandler;
 
+        Random rnd = new Random();
+        List<MongoDB.User> users1; 
+        List<MongoDB.User> users2; 
+        List<MongoDB.User> users3; 
+        List<MongoDB.User> users4;
         public NoSQL()
         {
             startingComments();
             NoSQLHandler = new NoSQLHandler();
+            initialize();
             inserting();
             selecting();
             updating();
             deleting();
         }
+        public void initialize()
+        {
+            users1 = setUser(1);
+            users2 = setUser(1000);
+            users3 = setUser(100000);
+            users4 = setUser(1000000);
+        }
+
+        public List<MongoDB.User> setUser(int count)
+        {
+            List<MongoDB.User> users = new List<MongoDB.User>();
+            for(int idx2 = 0; idx2 < count; idx2++)
+            {
+                List<MongoDB.Billing> billings = new List<MongoDB.Billing>();
+                List<MongoDB.PasswordForgetToken> passwordForgetTokens = new List<MongoDB.PasswordForgetToken>();
+                List<MongoDB.Userprofile> userprofiles = new List<MongoDB.Userprofile>();
+
+                for (int idx = 0; idx < rnd.Next(1, 3); idx++)
+                {
+                    int[] price = new int[] { 799, 1099, 1399 };
+                    MongoDB.Billing billing = new MongoDB.Billing()
+                    {
+                        price = price[rnd.Next(1, 3)],
+                        TIMESTAMP = DateTime.UtcNow,
+                        paid = (rnd.Next(0, 1) == 1) ? DateTime.Now : DateTime.MinValue
+                    };
+                    billings.Add(billing);
+                }
+
+                for (int idx = 0; idx < rnd.Next(0, 2); idx++)
+                {
+                    MongoDB.PasswordForgetToken passwordForgetToken = new MongoDB.PasswordForgetToken()
+                    {
+                        email = "user@hotmail.com",
+                        hash = RandomString(),
+                        created_at = DateTime.Now,
+                    };
+                    passwordForgetTokens.Add(passwordForgetToken);
+                }
+
+                for (int idx = 0; idx < rnd.Next(1, 4); idx++)
+                {
+                    MongoDB.Userprofile userprofile = new MongoDB.Userprofile()
+                    {
+                        name = "user",
+                        avatarUrl = "randomurl",
+                        dob = DateTime.Now,
+                        subtitlesOn = (rnd.Next(0, 1) == 1) ? true : false,
+                        created_at = DateTime.Now,
+                    };
+                    userprofiles.Add(userprofile);
+                }
+
+                users.Add(new MongoDB.User {
+                    email = "user@hotmail.com",
+                    password = "xxxxxxx",
+                    created_at = DateTime.UtcNow,
+                    emailsActivated = 0,
+                    failedLoginAttempts = 0,
+                    billings = billings,
+                    passwordForgetTokens = passwordForgetTokens,
+                    userprofiles = userprofiles,
+                });
+            
+            }
+            return users;
+        }
 
         public void inserting()
         {
             Console.WriteLine("INSERTING:");
-            insertingRows(1);
-            insertingRows(1000);
-            insertingRows(100000);
-            insertingRows(1000000);
+            insertingRows(users1, 1);
+            insertingRows(users2, 1000);
+            insertingRows(users3, 100000);
+            insertingRows(users4, 1000000);
             Console.WriteLine("\n-----------------------------------------------------------------------");
         }
 
-        public void insertingRows(int count)
+        public void insertingRows(List<MongoDB.User> users, int count)
         {
             Console.Write(String.Format("\tAverage time {0,15} ROW:", count));
             List <TimeSpan> sourceList = new List<TimeSpan>();
             for (int idx = 0; idx < 10; idx++)
             {
-                sourceList.Add(NoSQLHandler.createQueries(count));
+                sourceList.Add(NoSQLHandler.createQueries(users));
                 int countedRows = NoSQLHandler.countRows();
                 Console.SetCursorPosition(0, Console.CursorTop);
                 TimeSpan ts = getAverage(sourceList);
@@ -138,6 +211,14 @@ namespace DBeind
             Console.WriteLine("Starting MongoDB Benchmarking");
             Console.WriteLine("");
             Console.WriteLine("-----------------------------------------------------------------------");
+        }
+
+        public string RandomString()
+        {
+            int length = 20;
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[rnd.Next(s.Length)]).ToArray());
         }
     }
 
